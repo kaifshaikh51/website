@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Digital Point | Online Document & Government Services</title>
+    <meta name="description" content="Digital Point provides assistance with online document and government-related services including PAN Card, Aadhaar, Passport, Driving Licence, Ration Card and more.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f5f7fb;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        nav {
+            width: 100%;
+            background: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 7%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: 800;
+            color: #1455d9;
+        }
+
+        .logo span {
+            color: #111827;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #263246;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #1455d9;
+        }
+
+        .nav-btn {
+            background: #1455d9;
+            color: white !important;
+            padding: 10px 18px;
+            border-radius: 8px;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            padding: 70px 7%;
+            background: linear-gradient(135deg, #eef4ff, #ffffff);
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e3edff;
+            color: #1455d9;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #1455d9;
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: #5d6675;
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 14px 25px;
+            border-radius: 8px;
+            font-weight: 700;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #1455d9;
+            color: white;
+        }
+
+        .primary:hover {
+            background: #0d3fa7;
+            transform: translateY(-2px);
+        }
+
+        .secondary {
+            border: 2px solid #1455d9;
+            color: #1455d9;
+            background: white;
+        }
+
+        .secondary:hover {
+            background: #1455d9;
+            color: white;
+        }
+
+        /* SECTION */
+        section {
+            padding: 80px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #6b7280;
+        }
+
+        /* SERVICES */
+        .services {
+            background: white;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .service-card {
+            background: #f8faff;
+            border: 1px solid #e4e9f2;
+            border-radius: 14px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(20,85,217,0.12);
+            border-color: #b9cdf9;
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            background: #e3edff;
+            color: #1455d9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 24px;
+            margin-bottom: 17px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 8px;
+            font-size: 20px;
+        }
+
+        .service-card p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        /* ABOUT */
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            color: #626b7a;
+            margin-bottom: 18px;
+        }
+
+        .features {
+            display: grid;
+            gap: 15px;
+        }
+
+        .feature {
+            background: white;
+            padding: 18px;
+            border-radius: 10px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .feature-icon {
+            font-size: 25px;
+        }
+
+        /* PROCESS */
+        .process {
+            background: white;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .process-card {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .number {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: #1455d9;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto auto 18px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* CONTACT */
+        .contact {
+            background: #eef4ff;
+        }
+
+        .contact-box {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            border-radius: 18px;
+            padding: 45px;
+            text-align: center;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+        }
+
+        .contact-box h2 {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .contact-box p {
+            color: #687386;
+            margin-bottom: 25px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .contact-item {
+            font-weight: 600;
+        }
+
+        /* DISCLAIMER */
+        .disclaimer {
+            background: #fff7df;
+            border-top: 1px solid #f1df9d;
+            border-bottom: 1px solid #f1df9d;
+            padding: 20px 7%;
+            text-align: center;
+            color: #675a2a;
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #111827;
+            color: white;
+            padding: 45px 7% 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 35px;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+        }
+
+        footer p,
+        footer a {
+            color: #b9c0cc;
+            text-decoration: none;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 8px;
+        }
+
+        .copyright {
+            border-top: 1px solid #303846;
+            padding-top: 18px;
+            text-align: center;
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+        /* WHATSAPP */
+        .whatsapp {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #25d366;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 27px;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            z-index: 999;
+        }
+
+        /* MOBILE */
+        @media (max-width: 1000px) {
+
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                padding: 60px 5%;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .service-grid,
+            .process-grid,
+            .about,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about {
+                gap: 30px;
+            }
+
+            .contact-box {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo">Digital<span>Point</span></div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact" class="nav-btn">Contact Us</a></li>
+    </ul>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="badge">Digital Documentation Services</div>
+
+        <h1>
+            Your Trusted
+            <span>Digital Service</span>
+            Point
+        </h1>
+
+        <p>
+            Get assistance with online applications, certificates,
+            identity documents and various digital services — all at
+            one convenient place.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#services" class="btn primary">
+                Explore Services
+            </a>
+
+            <a href="#contact" class="btn secondary">
+                Contact Us
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+<section class="services" id="services">
+
+    <div class="section-title">
+
+        <h2>Our Services</h2>
+
+        <p>
+            Assistance for various online documents and government-related applications
+        </p>
+
+    </div>
+
+
+    <div class="service-grid">
+
+        <div class="service-card">
+            <div class="service-icon">🪪</div>
+            <h3>Aadhaar Card</h3>
+            <p>Assistance with Aadhaar-related online services and applications.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">💳</div>
+            <h3>PAN Card</h3>
+            <p>New PAN card and applicable PAN-related online services.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🚗</div>
+            <h3>Driving Licence</h3>
+            <p>Assistance with driving licence applications and online processes.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🍚</div>
+            <h3>Ration Card</h3>
+            <p>Assistance with ration card applications and related services.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">💍</div>
+            <h3>Marriage Certificate</h3>
+            <p>Application assistance for marriage certificate services.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🛂</div>
+            <h3>Passport</h3>
+            <p>Assistance with passport application and appointment processes.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🗳️</div>
+            <h3>Election Card</h3>
+            <p>Assistance with voter and election-card related applications.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🍽️</div>
+            <h3>FSSAI Certificate</h3>
+            <p>Assistance with FSSAI registration and applicable documentation.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">📄</div>
+            <h3>Income Certificate</h3>
+            <p>Assistance with online income certificate applications.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🏥</div>
+            <h3>Ayushman Card</h3>
+            <p>Assistance with applicable Ayushman card services.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">👶</div>
+            <h3>Birth Certificate</h3>
+            <p>Assistance with birth certificate application-related processes.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">➕</div>
+            <h3>Many More Services</h3>
+            <p>Contact Digital Point for assistance with other digital services.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+    <div class="about">
+
+        <div>
+
+            <h2>
+                Digital Services,
+                Made Simple.
+            </h2>
+
+            <p>
+                Digital Point is a local digital service centre helping
+                customers with online applications, document-related
+                services and digital processes.
+            </p>
+
+            <p>
+                Our goal is to make online documentation easier,
+                simpler and more convenient for customers.
+            </p>
+
+            <a href="#contact" class="btn primary">
+                Get Assistance
+            </a>
+
+        </div>
+
+
+        <div class="features">
+
+            <div class="feature">
+                <div class="feature-icon">✓</div>
+                <div>
+                    <strong>Convenient Service</strong>
+                    <p>Get multiple digital services at one place.</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <div>
+                    <strong>Document Assistance</strong>
+                    <p>Guidance for online applications and documentation.</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <div>
+                    <strong>Easy Process</strong>
+                    <p>We help you understand the required process.</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <div>
+                    <strong>Digital Support</strong>
+                    <p>Assistance with various online digital services.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROCESS -->
+<section class="process" id="process">
+
+    <div class="section-title">
+
+        <h2>How It Works</h2>
+
+        <p>
+            Simple steps to get assistance with your service
+        </p>
+
+    </div>
+
+
+    <div class="process-grid">
+
+        <div class="process-card">
+            <div class="number">1</div>
+            <h3>Choose Service</h3>
+            <p>Select the document or service you need.</p>
+        </div>
+
+        <div class="process-card">
+            <div class="number">2</div>
+            <h3>Contact Us</h3>
+            <p>Call or message Digital Point for assistance.</p>
+        </div>
+
+        <div class="process-card">
+            <div class="number">3</div>
+            <h3>Submit Documents</h3>
+            <p>Provide the required documents for your application.</p>
+        </div>
+
+        <div class="process-card">
+            <div class="number">4</div>
+            <h3>Application Process</h3>
+            <p>We assist you with the applicable online process.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+
+    <strong>Important:</strong>
+    Digital Point is an independent digital service centre and is
+    not a government department or government website.
+    Services are provided as application/documentation assistance.
+    Final approval or issuance of documents is done by the relevant
+    government authority.
+
+</div>
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+    <div class="contact-box">
+
+        <h2>Need Digital Assistance?</h2>
+
+        <p>
+            Contact Digital Point for information about available
+            services, required documents and application assistance.
+        </p>
+
+        <div class="contact-info">
+
+            <!-- CHANGE THESE DETAILS -->
+            <div class="contact-item">
+                📞 +91 8980276357
+            </div>
+
+            <div class="contact-item">
+                📧 digitalpoint@email.com
+            </div>
+
+            <div class="contact-item">
+                📍 A-3,Ground Floor,Baagmar Plaza,Below Shifa Hospital,Ahmedabad, Gujarat
+            </div>
+
+        </div>
+
+        <!-- CHANGE WHATSAPP NUMBER -->
+        <a
+            href="https://wa.me/91XXXXXXXXXX"
+            class="btn primary"
+            target="_blank">
+            WhatsApp Us
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+
+            <h3>Digital Point</h3>
+
+            <p>
+                Professional digital documentation and online
+                application assistance for various services.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Quick Links</h3>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h3>Services</h3>
+
+            <ul>
+                <li><a href="#services">PAN Card</a></li>
+                <li><a href="#services">Aadhaar</a></li>
+                <li><a href="#services">Passport</a></li>
+                <li><a href="#services">Driving Licence</a></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Digital Point. All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a
+    href="https://wa.me/91XXXXXXXXXX"
+    class="whatsapp"
+    target="_blank"
+    title="Chat on WhatsApp">
+    ☎
+</a>
+
+
+</body>
+</html>
